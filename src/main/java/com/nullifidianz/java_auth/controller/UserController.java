@@ -36,17 +36,17 @@ public class UserController {
         return userService.getAll();
     }
 
-    @GetMapping("/list/{id}}")
+    @GetMapping("/list/{id}")
     public ResponseEntity<UserResponse> listById(Long id) {
         return ResponseEntity.ok(userService.getById(id));
     }
 
-    @PutMapping("/update/{id}}")
+    @PutMapping("/update/{id}")
     public ResponseEntity<UserResponse> updateUser(@PathVariable Long id, @RequestBody UserUpdateRequest request) {
         return ResponseEntity.ok(userService.update(request, id));
     }
 
-    @DeleteMapping("/delete/{id}}")
+    @DeleteMapping("/delete/{id}")
     public ResponseEntity<Void> delete(@PathVariable Long id) {
         userService.delete(id);
         return ResponseEntity.noContent().build();

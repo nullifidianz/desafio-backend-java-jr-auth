@@ -27,7 +27,7 @@ public class User {
     private String nome;
     @Column(name = "user_email", nullable = false, unique = true)
     private String email;
-    @Column(name = "user_email", nullable = false)
+    @Column(name = "user_password", nullable = false)
     private String senha;
 
 }
