@@ -10,18 +10,29 @@ import com.nullifidianz.java_auth.entity.User;
 @Component
 public class UserMapper {
     public User toEntity(UserRequest request) {
-        // TODO: toEntity DTO
-        return null;
+        User user = new User();
+        user.setNome(request.getNome());
+        user.setEmail(request.getEmail());
+        user.setSenha(request.getSenha());
+        return user;
     }
 
     public UserResponse toResponse(User user) {
-        // TODO: toResponse DTO
-        return null;
+        UserResponse response = new UserResponse();
+        response.setId(user.getId());
+        response.setNome(user.getNome());
+        response.setEmail(user.getEmail());
+        return response;
     }
 
-    public UserUpdateRequest updateMapper(User user) {
-        // TODO: updateMapper DTO
-        return null;
+    public void updateMapper(UserUpdateRequest request, User user) {
+        if (request.getNome() != null) {
+            user.setNome(request.getNome());
+        }
+        if (request.getEmail() != null) {
+            user.setEmail(request.getEmail());
+        }
+
     }
 
 }
